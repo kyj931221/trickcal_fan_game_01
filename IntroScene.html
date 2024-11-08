@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Game Intro</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        #introScreen {
+            text-align: center;
+        }
+
+        /* 게임 타이틀 이미지 스타일 */
+        #gameTitle {
+            width: 800px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        /* 게임 시작 버튼 스타일 */
+        #startButton {
+            padding: 20px 50px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 10px;
+        }
+
+        #startButton:hover {
+            background-color: #0056b3;
+        }
+
+        /* 돌아 가기 버튼 스타일 */
+        #backButton {
+            padding: 20px 50px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #backButton:hover {
+            background-color: #b30000;
+        }
+    </style>
+</head>
+
+<body>
+<!-- 인트로 화면 -->
+<div id="introScreen">
+    <img id="gameTitle" src="assets/Image/game-title.png" alt="Game Title"><br>
+    <button id="startButton" onclick="startGame()">게임 시작</button><br>
+    <button id="backButton" onclick="backGame()">돌아 가기</button>
+</div>
+
+<script>
+    function  startGame(){
+        window.location.href = "GameScene.html";
+    }
+
+    function backGame(){
+        window.location.href = "https://kyj931221.github.io/DevPort/Content";
+    }
+</script>
+
+</body>
+</html>
