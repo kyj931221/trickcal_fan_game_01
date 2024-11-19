@@ -18,13 +18,79 @@
             overflow: hidden;
         }
 
+        #main-container {
+            display: flex;
+            flex-direction: column; /* 세로 정렬 */
+            align-items: center;
+            justify-content: flex-start;
+            padding: 10px;
+            text-align: center;
+            background-color: white;
+        }
+
+        /* 전체 컨테이너 스타일 */
+        #unity-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 100px auto; /* 상단 간격 */
+            text-align: center;
+        }
+
+        #unity-canvas {
+            display: block;
+            margin: 0 auto;
+            background-color: #000; /* 검정 배경 */
+        }
+
+        /* 설명문 스타일 */
+        .description-container {
+            max-width: 960px;
+            margin: 10px auto; /* 상하 간격 */
+            padding: 30px;
+            background: linear-gradient(135deg, #84fab0, #8fd3f4); /* 파란-초록 그라디언트 */
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .description-container h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .description-container p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .description-container p span {
+            font-weight: bold;
+            color: #ffdd00; /* 강조 텍스트 색상 */
+        }
+
+        /* 애니메이션 효과 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         #introScreen {
             text-align: center;
         }
 
         /* 게임 타이틀 이미지 스타일 */
         #gameTitle {
-            width: 800px;
+            width: 700px;
             height: auto;
             margin-bottom: 10px;
         }
@@ -65,21 +131,35 @@
         }
     </style>
 </head>
-
 <body>
-<!-- 인트로 화면 -->
-<div id="introScreen">
-    <img id="gameTitle" src="assets/Image/game-title.png" alt="Game Title"><br>
-    <button id="startButton" onclick="startGame()">게임 시작</button><br>
-    <button id="backButton" onclick="backGame()">돌아 가기</button>
-</div>
+<div id="main-container">
+    <!-- ==================== 추가된 설명 섹션 시작 ==================== -->
+    <div class="description-container">
+        <h2>트릭컬 팬 게임 : 버터의 즐거운 산책.</h2>
+        <p>
+            <span>"트릭컬 팬 게임 : 버터의 즐거운 산책."</span>은 트릭컬 팬 게임으로 제작하였습니다.
+        </p>
+        <p>
+            버터가 좋아하는 음식과 싫어하는 음식을 구분해서 점수를 올려보세요! <br>
+            지금 바로 시작하세요!
+        </p>
+    </div>
+    <!-- ==================== 추가된 설명 섹션 끝 ==================== -->
 
+    <!-- 인트로 화면 -->
+    <div id="introScreen">
+        <img id="gameTitle" src="assets/Image/game-title.png" alt="Game Title"><br>
+        <button id="startButton" onclick="startGame()">게임 시작</button>
+        <br>
+        <button id="backButton" onclick="backGame()">돌아 가기</button>
+    </div>
+</div>
 <script>
-    function  startGame(){
+    function startGame() {
         window.location.href = "GameScene.html";
     }
 
-    function backGame(){
+    function backGame() {
         window.location.href = "https://kyj931221.github.io/DevPort/Content";
     }
 </script>
